@@ -1,0 +1,25 @@
+name: Execute Python Script Daily
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # This runs at 00:00 UTC every day
+
+jobs:
+  execute_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'  # Use the latest version of Python 3
+      
+      - name: Install dependencies
+        run: |
+          pip install boto3 clickhouse-driver
+          
+      - name: Execute the script
+        run: python ./s3_upload.py  # Replace with the correct path to your script
+
