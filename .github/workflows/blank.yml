@@ -18,7 +18,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          pip install boto3 clickhouse-driver
+          pip install boto3 clickhouse-driver clickhouse_connect
           
       - name: Execute the script
         run: python ./s3_upload.py  # Replace with the correct path to your script
