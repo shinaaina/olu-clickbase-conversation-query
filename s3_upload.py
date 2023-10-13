@@ -40,7 +40,7 @@ data = fetch_data_from_clickhouse()
 
 # Generate filename based on today's date
 current_date = datetime.now().strftime('%Y-%m-%d')
-file_name = f"{current_date}.csv"
+file_name = f"Daily Agent Report {current_date}.csv"
 
 # Call the function to create CSV in s3
 write_to_s3(data, "olu-cresta-bucket", file_name)
