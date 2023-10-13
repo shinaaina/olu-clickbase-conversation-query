@@ -13,7 +13,8 @@ def fetch_data_from_clickhouse():
     client = clickhouse_connect.get_client(host='yetbnhfay5.us-east-1.aws.clickhouse.cloud', port=8443, username='default', password='U_uI8vYuGK~PK')
 
     # Execute the query
-    result = client.query('SELECT * FROM conversations')
+    #result = client.query('SELECT * FROM conversations')
+    result = client.query('SELECT agent_id, AVG(call_duration_sec) AS avg_call_length, quantile(0.9)(call_duration_sec) AS percentile_90_call_length FROM conversations WHERE toDate(call_start) = today() GROUP BY agent_id')
     print (result.result_rows)
     
     return result.result_rows
