@@ -7,7 +7,9 @@ This repo contains these 3 files to meet the requirements of the customer:
 - A GitHub Action to schedule the execution of the Python code daily.
 
 **Other Points to note:**
-1. The Python code has the following parameters that should be changed to values for the respoective environments:
+1. The SQL file is just included for reference purposes, and has no impact in the actual code that runs.
+   
+2. The Python code has the following parameters that should be changed to values for the respoective environments:
 - Click House Connection details:
   - hostname
   - port
@@ -21,5 +23,5 @@ This repo contains these 3 files to meet the requirements of the customer:
 
 - CSV File Name dynamic set to "Daily Agent Report {Today's date}.csv
 
-2. The GitHub Action has been set to run at 23:00 GMT everyday, and can be changed based on preference
-3. The GitHub Action can also be run manually for testing or adhoc requests.
+3. The GitHub Action has been set to run at 23:00 GMT everyday, and can be changed based on preference
+4. The GitHub Action can also be run manually for testing or adhoc requests.
