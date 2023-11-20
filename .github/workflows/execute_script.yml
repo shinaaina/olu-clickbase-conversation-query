@@ -1,8 +1,6 @@
 name: Execute Python Script Daily
 
 on:
-  schedule:
-    - cron: '17 13 * * *'  # This runs at 00:00 UTC every day
   workflow_dispatch:  # This allows manual triggering
   
 jobs:
